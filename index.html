@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Choose Wisely</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&family=Spectral:ital,wght@0,400;0,600;1,400&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="stage">
+  <canvas id="bg"></canvas>
+  <div id="doors"></div>
+  <div id="sconces"></div>
+  <div id="player">
+    <div class="shadow"></div>
+    <svg viewBox="0 0 120 260" aria-hidden="true">
+      <defs>
+        <linearGradient id="cloak" x1="0" x2="1">
+          <stop offset="0" stop-color="#3b2416"/><stop offset=".22" stop-color="#140d09"/>
+          <stop offset=".78" stop-color="#110b08"/><stop offset="1" stop-color="#3b2416"/>
+        </linearGradient>
+        <linearGradient id="leg" x1="0" x2="1">
+          <stop offset="0" stop-color="#2a1a10"/><stop offset=".5" stop-color="#0b0806"/><stop offset="1" stop-color="#2a1a10"/>
+        </linearGradient>
+      </defs>
+      <g class="legL"><path d="M44 186 L57 186 L56 246 L58 254 L40 254 L43 246 Z" fill="url(#leg)"/></g>
+      <g class="legR"><path d="M63 186 L76 186 L77 246 L80 254 L62 254 L64 246 Z" fill="url(#leg)"/></g>
+      <g class="body">
+        <path d="M60 58 C 44 58 33 66 30 80 L 22 196 C 30 204 46 206 60 206 C 74 206 90 204 98 196 L 90 80 C 87 66 76 58 60 58 Z"
+              fill="url(#cloak)" stroke="rgba(255,150,70,.32)" stroke-width="1.2"/>
+        <path d="M60 64 L 60 200" stroke="rgba(0,0,0,.5)" stroke-width="1.5"/>
+        <path d="M44 74 C 46 120 44 160 40 198 M76 74 C 74 120 76 160 80 198" stroke="rgba(0,0,0,.35)" stroke-width="1.2" fill="none"/>
+        <path d="M60 14 C 46 14 39 26 39 40 C 39 54 46 66 60 68 C 74 66 81 54 81 40 C 81 26 74 14 60 14 Z"
+              fill="url(#cloak)" stroke="rgba(255,150,70,.35)" stroke-width="1.2"/>
+        <path d="M60 10 C 63 16 64 20 62 26" stroke="rgba(0,0,0,.6)" stroke-width="2" fill="none"/>
+      </g>
+    </svg>
+  </div>
+  <canvas id="fx"></canvas>
+  <div id="flash"></div>
+  <div id="hud">
+    <div class="stat">Floor<b id="floorN">1</b></div>
+    <div class="hud-right">
+      <div class="stat">Best<b id="bestN">0</b></div>
+      <button id="sound" type="button" aria-pressed="true">Sound on</button>
+    </div>
+  </div>
+  <div id="prompt" class="hide">Which door?<small>Click a door or press 1, 2 or 3</small></div>
+  <div id="overlay"></div>
+  <div id="fade"></div>
+</div>
+<script src="game.js"></script>
+</body>
+</html>
